@@ -11,12 +11,14 @@ class AppTest {
         String result = tapSystemOut(() -> {
             App.printSquare(circle);
         });
+        System.out.println(result);
         assertThat(result.trim()).isEqualTo("79\nВычисление окончено");
 
         Circle circle1 = new Circle(new Point(2, 3), -5);
         String result1 = tapSystemOut(() -> {
             App.printSquare(circle1);
         });
+        System.out.println(result1);
         assertThat(result1.trim()).isEqualTo("Не удалось посчитать площадь\nВычисление окончено");
     }
 }

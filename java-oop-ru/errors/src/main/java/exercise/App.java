@@ -10,16 +10,14 @@ public class App {
         this.square = square;
     }
 
-    public static double printSquare(Circle circle) throws NegativeRadiusException {
-        var result = Math.PI * (circle.getRadius() * circle.getRadius());
+    public static void printSquare(Circle circle) throws NegativeRadiusException {
         try {
-            NegativeRadiusException.exception(circle);
+            System.out.println(Math.round(circle.getSquare()));
         } catch (Exception e) {
-            throw new NegativeRadiusException("Не удалось посчитать площадь");
+            System.out.println("Не удалось посчитать площадь");
         } finally {
             System.out.println("Вычисление окончено");
         }
-        return result;
     }
 }
 // END

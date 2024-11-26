@@ -12,7 +12,7 @@ public class Validator {
 
         Field[] fields = address.getClass().getDeclaredFields();
         for (Field field : fields) {
-            if(field.isAnnotationPresent(NotNull.class)) {
+            if (field.isAnnotationPresent(NotNull.class)) {
                 field.setAccessible(true);
                 String stringField = field.toString();
                 String[] splitField = stringField.split("\\.");
@@ -20,8 +20,6 @@ public class Validator {
                     Field clas = Address.class.getDeclaredField(splitField[splitField.length - 1]);
                     clas.setAccessible(true);
                     String value = (String) clas.get(address);
-                    System.out.println(value);
-                    System.out.println(value == null);
                     if (value == null) {
                         result.add(splitField[splitField.length - 1]);
                     }

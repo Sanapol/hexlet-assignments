@@ -15,7 +15,7 @@ public final class App {
             config.bundledPlugins.enableDevLogging();
         });
         return
-        app.get("/welcome", ctx -> ctx.result("Welcome to Hexlet"));
+        app.get("/welcome", ctx -> ctx.result("Welcome to Hexlet!"));
         // END
     }
 

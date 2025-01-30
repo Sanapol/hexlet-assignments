@@ -2,7 +2,7 @@
 @param BuildArticlePage page
 
 @template.layout.page(content = @`
-    @if(page.getError() != null)
+    @if(page != null)
         <ul>
             @for(var errors : page.getError().values())
                 @for(var error : errors)
@@ -16,7 +16,7 @@
             <label>
                 title
                     <input class="mb-3" type="text" name="title" value="${page.getTitle()}">
-                    </label>
+            </label>
         </div>
         <div>
             <label>

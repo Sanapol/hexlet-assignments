@@ -2,9 +2,9 @@
 @param BuildArticlePage page
 
 @template.layout.page(content = @`
-    @if(page != null)
+    @if(page.getErrors() != null)
         <ul>
-            @for(var errors : page.getError().values())
+            @for(var errors : page.getErrors().values())
                 @for(var error : errors)
                     <li>${error.getMessage()}</li>
                 @endfor

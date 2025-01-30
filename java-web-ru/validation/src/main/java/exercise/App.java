@@ -32,8 +32,8 @@ public final class App {
 
         // BEGIN
         app.get("/articles/build", ctx -> {
-           var post =  new BuildArticlePage();
-           ctx.render("articles/build.jte", model("post", post));
+           var page =  new BuildArticlePage();
+           ctx.render("articles/build.jte", model("page", page));
         });
 
         app.post("/articles", ctx -> {

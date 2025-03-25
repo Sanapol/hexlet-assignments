@@ -47,10 +47,7 @@ public class Application {
     public ResponseEntity<Post> show(@PathVariable String id) {
         var maybePost = posts.stream().filter(p -> p.getId().equals(id)).findFirst();
 
-        if (maybePost.isPresent()) {
             return ResponseEntity.of(maybePost);
-        }
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
     }
 
     @PutMapping("/posts/{id}")

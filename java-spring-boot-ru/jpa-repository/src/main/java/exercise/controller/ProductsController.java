@@ -26,7 +26,7 @@ public class ProductsController {
 
     // BEGIN
     @GetMapping(path = "")
-    public List<Product> index(@RequestParam(defaultValue = "0") int min, @RequestParam(defaultValue = "9999") int max) {
+    public List<Product> index(@RequestParam(defaultValue = Integer.MIN_VALUE + "") int min, @RequestParam(defaultValue = Integer.MAX_VALUE + "") int max) {
         var products = productRepository.findByPriceBetween(min, max, Sort.by(Sort.Order.asc("price")));
         return products;
     }

@@ -31,7 +31,8 @@ public class UserService {
         return user;
     }
 
-    public Mono<User> update(User data) {
+    public Mono<User> update(long id, User data) {
+        data.setId(id);
         return userRepository.save(data);
     }
 

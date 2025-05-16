@@ -72,8 +72,8 @@ public class AppTest {
             .exchange()
             .expectStatus().isOk()
             .expectBody(User.class).value(user -> {
-                assertThat(user.getFirstName()).isEqualTo("John");
-                assertThat(user.getLastName()).isEqualTo("Smith");
+                assertThat(user.getFirstName()).isEqualTo("Test");
+                assertThat(user.getLastName()).isEqualTo("User");
             });
     }
 
